@@ -1,0 +1,26 @@
+<%- include('includes/head.ejs') %> 
+  <!-- <link rel="stylesheet" href="/css/additional.css"> -->
+  <!-- <script src="/js/somescript.js" defer></script> -->
+</head>
+<body>
+  <%- include('includes/navigation.ejs') %> 
+
+  <main>
+    <h1>Add User</h1>
+      <form action="/admin/users" method="POST">
+        <label for="user">Username</label>
+        <input type="text" name="user" id="user">
+        <button class="btn" type="submit">Add User</button>
+      </form>
+      <br>
+    <h2>Users</h2>
+    <% if (users.length > 0) { %>
+      <ul>
+        <% for (let user of users) { %> 
+          <li><%= user.name %> </li>
+        <% } %> 
+      </ul>
+    <% } %> 
+  </main>
+
+<%- include('includes/end.ejs') %> 
